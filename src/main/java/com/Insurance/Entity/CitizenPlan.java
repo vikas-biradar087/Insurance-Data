@@ -1,6 +1,9 @@
 package com.Insurance.Entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 @Data
@@ -8,17 +11,39 @@ import lombok.Data;
 @Table(name="citizen")
 public class CitizenPlan {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	private String planeName;
+	private String planName;
 	
-	private String planeStatus;
+	private String planStatus;
 	
 	private String cname;
 	
 	private String email;
 	
 	private String gender;
+	
+	private long number;
+	
+	private long ssn;
+
+	public long getNumber() {
+		return number;
+	}
+
+	public void setNumber(long number) {
+		this.number = number;
+	}
+
+	public long getSsn() {
+		return ssn;
+	}
+
+	public void setSsn(long ssn) {
+		this.ssn = ssn;
+	}
 
 	public long getId() {
 		return id;
@@ -28,20 +53,20 @@ public class CitizenPlan {
 		this.id = id;
 	}
 
-	public String getPlaneName() {
-		return planeName;
+	public String getPlanName() {
+		return planName;
 	}
 
-	public void setPlaneName(String planeName) {
-		this.planeName = planeName;
+	public void setPlanName(String planName) {
+		this.planName = planName;
 	}
 
-	public String getPlaneStatus() {
-		return planeStatus;
+	public String getPlanStatus() {
+		return planStatus;
 	}
 
-	public void setPlaneStatus(String planeStatus) {
-		this.planeStatus = planeStatus;
+	public void setPlanStatus(String planStatus) {
+		this.planStatus = planStatus;
 	}
 
 	public String getCname() {
